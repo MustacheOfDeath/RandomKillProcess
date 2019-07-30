@@ -2,7 +2,6 @@ package utility;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -57,22 +56,5 @@ public class processUtils {
         } catch (IOException ioe) {
             ioe.printStackTrace();
         }
-    }
-
-    public static void listProcess() {
-        List<String> processes = processUtils.listRunningProcesses();
-        String result = "";
-
-        Iterator<String> it = processes.iterator();
-        int i = 0;
-        while (it.hasNext()) {
-            result += it.next() + ",        ";
-            i++;
-            if (i == 5) {
-                result += "\n";
-                i = 0;
-            }
-        }
-        System.out.println("Running processes :\n " + result);
     }
 }
